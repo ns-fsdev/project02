@@ -1,0 +1,50 @@
+<!-- 
+	Florida Atlantic University / Quickstart. 
+	Full stack web developer
+    Project02  Giphy API
+    BY NIGEL Sampath
+
+	API link : 
+	"http://api.giphy.com/v1/gifs/search?q=SEARCH1+SEARCH2&api_key=YOUR_API_KEY&limit=5"
+
+	BETA KEY LINK :
+	https://giphy.api-docs.io/1.0/welcome/access-and-api-keys 
+
+	BETA KEY : 
+	dc6zaTOxFJmzC
+
+	NOTES:
+	HTML file only:  index.html    (from test file index1.html)
+	this tests connection to api server, and return of API data. 
+	API data printed to console.log
+
+-->	
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> Giphy </title>
+</head>
+
+<body>
+	<p> get Giphy API data </p>
+	<p> see console.log </p>
+
+
+</body>
+
+
+<script src= "https://code.jquery.com/jquery-3.5.1.min.js" >
+</script>
+
+<script>
+$.get("http://api.giphy.com/v1/gifs/search?q=scooby+doo&api_key=dc6zaTOxFJmzC&limit=5", 
+	function(data) {                  // (data) is returned API data //
+    console.log(data);
+    
+    
+	});
+</script>
+
+</html>
