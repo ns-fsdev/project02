@@ -1,8 +1,7 @@
 <!-- 
-	Florida Atlantic University / Quickstart. 
-	Full stack web developer
-    Project02  Giphy API
-    BY NIGEL Sampath
+	
+	Project02  Giphy API
+	Sun 11-08-20 10.30p
 
 	API link : 
 	"http://api.giphy.com/v1/gifs/search?q=SEARCH1+SEARCH2&api_key=YOUR_API_KEY&limit=5"
@@ -14,22 +13,23 @@
 	dc6zaTOxFJmzC
 
 	NOTES:
-	HTML file only:  index.html    (from test file index1.html)
-	this tests connection to api server, and return of API data. 
-	API data printed to console.log
+	HTML file only:  index.html    (from test file index2.html)
+	
+	
+	  .getjson, 
+	  .each reads through array
+	  this["url"]  is json array element "url" which is image url
 
 -->	
 
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
 	<title> Giphy </title>
 </head>
 
 <body>
-	<p> get Giphy API data </p>
-	<p> see console.log </p>
+	<p> here is some text </p>
 
 
 </body>
@@ -39,12 +39,17 @@
 </script>
 
 <script>
-$.get("http://api.giphy.com/v1/gifs/search?q=scooby+doo&api_key=dc6zaTOxFJmzC&limit=5", 
+$.getJSON("https://api.giphy.com/v1/gifs/search?q=scooby+doo&api_key=dc6zaTOxFJmzC&limit=10", 
 	function(data) {                  // (data) is returned API data //
-    console.log(data);
     
+    console.log(data);                //  giphy json data shows in console
     
-	});
+    $.each(data.data, function() {    //  data=json data,  data=array name
+        $("body").append( this["url"] + "<br>" );     // at least this worked first time //
+    })
+
+    
+	})
 </script>
 
 </html>
