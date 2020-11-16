@@ -12,26 +12,32 @@
 	BETA KEY : 
 	dc6zaTOxFJmzC
 
-	NOTES:
-	HTML file only:  index.html    (from test file index2.html)
-	
-	
-	  .getjson, 
-	  .each reads through array
-	  this["url"]  is json array element "url" which is image url
+ 
+
+	NOTES: 
+	HTML file only:  index.html    (from test file index3.html)
+	Add input txt box, 
+	Add button
 
 -->	
 
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title> Giphy </title>
 </head>
 
 <body>
-	<p> here is some text </p>
+	<p> Welcome to Giphy search </p>
 
+	Enter Search <input type="text" id="searchbox"> </input>
 
+	<button type="button" id="getsearch"> Get search </button>
+
+	<div id=imgcont>
+    this is a div <br>
+	</div>	
 </body>
 
 
@@ -39,17 +45,38 @@
 </script>
 
 <script>
-$.getJSON("https://api.giphy.com/v1/gifs/search?q=scooby+doo&api_key=dc6zaTOxFJmzC&limit=10", 
-	function(data) {                  // (data) is returned API data //
     
-    console.log(data);                //  giphy json data shows in console
+    // declare variables
+    var basestring="https://api.giphy.com/v1/gifs/search?q=" ;
+    var searchstring= "" ;
+    var apikey="&api_key=dc6zaTOxFJmzC" ;
+    var searchnum="&limit=10" ;
+    var finalString=""   ;
     
-    $.each(data.data, function() {    //  data=json data,  data=array name
-        $("body").append( this["url"] + "<br>" );     // at least this worked first time //
-    })
+    $(document).ready(function() {
+     	
+    $("#getsearch").click(function() {
+    	searchstring=$("#searchbox").val() ; 
 
+    	finalString= basestring+searchstring+apikey+searchnum ; 
+
+        console.log(finalString) ; 
     
-	})
+    
+    // submit api query request
+    $.get(finalString, 
+    function(giphResponse) {                 
+    
+    $.each(giphResponse.data, function() {
+        $("#imgcont").append( this["url"] + "<br>" );     
+    });
+    });
+	
+	
+
+	});
+    });
+
 </script>
 
 </html>
