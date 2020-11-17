@@ -1,7 +1,7 @@
 <!-- 
 	
 	Project02  Giphy API
-	Sun 11-08-20 10.30p
+	
 
 	API link : 
 	"http://api.giphy.com/v1/gifs/search?q=SEARCH1+SEARCH2&api_key=YOUR_API_KEY&limit=5"
@@ -12,12 +12,14 @@
 	BETA KEY : 
 	dc6zaTOxFJmzC
 
- 
+    MY NOTES:
+	
 
 	NOTES: 
-	HTML file only:  index.html    (from test file index3.html)
-	Add input txt box, 
-	Add button
+     index.html    (from test file index4.html)
+     offload internal script to external ./script/script.js
+    
+	
 
 -->	
 
@@ -25,7 +27,10 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title> Giphy </title>
+    <title> Giphy </title>
+    
+    <script src= "https://code.jquery.com/jquery-3.5.1.min.js"> </script>
+    <script src= "./script/script.js"> </script>
 </head>
 
 <body>
@@ -37,46 +42,15 @@
 
 	<div id=imgcont>
     this is a div <br>
-	</div>	
+    </div>	
+    
 </body>
 
 
-<script src= "https://code.jquery.com/jquery-3.5.1.min.js" >
-</script>
 
-<script>
     
-    // declare variables
-    var basestring="https://api.giphy.com/v1/gifs/search?q=" ;
-    var searchstring= "" ;
-    var apikey="&api_key=dc6zaTOxFJmzC" ;
-    var searchnum="&limit=10" ;
-    var finalString=""   ;
-    
-    $(document).ready(function() {
-     	
-    $("#getsearch").click(function() {
-    	searchstring=$("#searchbox").val() ; 
 
-    	finalString= basestring+searchstring+apikey+searchnum ; 
 
-        console.log(finalString) ; 
-    
-    
-    // submit api query request
-    $.get(finalString, 
-    function(giphResponse) {                 
-    
-    $.each(giphResponse.data, function() {
-        $("#imgcont").append( this["url"] + "<br>" );     
-    });
-    });
-	
-	
 
-	});
-    });
-
-</script>
 
 </html>
