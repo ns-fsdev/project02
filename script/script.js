@@ -1,14 +1,15 @@
 /*
 Project02 Giphy API
+"script.js"
 
-script.js
+
 
 */
     
-    // declare variables
+    // declare Search String variables
     var basestring="https://api.giphy.com/v1/gifs/search?q=" ;
     var searchstring= "" ;
-    var apikey="&api_key=dc6zaTOxFJmzC" ;
+    var apikey="&api_key=4zv45wmD5vJvLn2UE3B4tNBY1ny9kZZV" ;
     var searchnum="&limit=10" ;
     var finalString=""   ;
     
@@ -19,21 +20,36 @@ script.js
 
     	finalString= basestring+searchstring+apikey+searchnum ; 
 
-        console.log(finalString) ; 
+        // console.log(finalString) ; 
     
     
     // submit api query request
     $.get(finalString, 
     function(giphResponse) {       
+      
+	//console.log(giphResponse.data);       // test to see API data
     
-    // .each reads through each array element
-    // this["url"]     reads giphy data array URL field
-    $.each(giphResponse.data, function() {
-        $("#imgcont").append( this["url"] + "<br>" );   
-    });
+    // .each reads through each array element automatically 
+    // giphResponse.data is  Giphy Array called "data" 
+    // "this" reads giphResponse.data JSON
+    //  this.images.original.url   -  Giphy JSON data path
+    
+	$.each(giphResponse.data, function() {
+       
+
+       imgUrl=this.images.original.url;
+      
+       imgUrlHtml=`<img src=${imgUrl} />`;
+       
+       $("#imgCont").append(imgUrlHtml);    
+        
+        
+    
+    });    
+    
     });
 	
 	
 
-	});
-    });
+	});  
+    });  
