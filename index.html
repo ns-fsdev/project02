@@ -1,7 +1,4 @@
 <!-- 
-	Florida Atlantic University / Quickstart. 
-	Full stack web developer
-	BY NIGEL Sampath
 	
 	Project02  Giphy API
 	"index.html"
@@ -9,21 +6,16 @@
 	API link : 
 	"http://api.giphy.com/v1/gifs/search?q=SEARCH1+SEARCH2&api_key=YOUR_API_KEY&limit=5"
 
-	
 
-   NOTES: 
-	 index.html    (from test file index5.html)
+	NOTES: 
+	 index.html    (from test file index6.html)
 	 script.js
 	 
-
-	 this is now working!
-	 API request sent, 
-	 JSON data received. 
-	 JSON data read and formatted 
-	 to produce image URL <img src>
-	 - images then displayed to a <div>
-
-	No Styling applied yet	
+     this is now working!
+	 images display in <div>
+	 added select dropdown, number of searches
+	 
+     No Styling applied yet	
 
 -->	
 
@@ -40,11 +32,27 @@
 
 <body>
 	<p> Welcome to Giphy search </p>
-
+	
+	<form> 
+	<!-- Text box search -->	
 	Enter Search <input type="text" id="searchbox"> </input>
-
 	<button type="button" id="getsearch"> Get search </button>
+	
+	<!-- Dropdown , number of results -->
+	<label> search number </label>
+	<select id="selectBox">
+		<option value="15" selected> 15 </option>
+		<option value="20">          20 </option>
+		<option value="25">          25 </option>
+		<option value="30">          30 </option>
+		<option value="40">          40 </option>
+		<option value="50">          50 </option>
+	</select>	
+	</form>
+	
+	
 
+	 
 	<div id="imgCont">
     this is a div <br>
 	

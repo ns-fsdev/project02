@@ -10,17 +10,27 @@ Project02 Giphy API
     var basestring="https://api.giphy.com/v1/gifs/search?q=" ;
     var searchstring= "" ;
     var apikey="&api_key=4zv45wmD5vJvLn2UE3B4tNBY1ny9kZZV" ;
-    var searchnum="&limit=10" ;
-    var finalString=""   ;
+    var baseNum="&limit=";
+    var selectBoxNum="";
+    var finalString="";
     
     $(document).ready(function() {
      	
     $("#getsearch").click(function() {
-    	searchstring=$("#searchbox").val() ; 
 
-    	finalString= basestring+searchstring+apikey+searchnum ; 
+        //search text box
+        searchstring=$("#searchbox").val() ; 
 
-        // console.log(finalString) ; 
+        // select box - number of searches
+        selectBoxNum=$("#selectBox").val() ;
+        // console.log("SELECT BOX "+selectBoxNum);  
+        
+        
+        
+
+    	finalString= basestring+searchstring+apikey+baseNum+selectBoxNum;
+         
+        
     
     
     // submit api query request
@@ -33,23 +43,21 @@ Project02 Giphy API
     // giphResponse.data is  Giphy Array called "data" 
     // "this" reads giphResponse.data JSON
     //  this.images.original.url   -  Giphy JSON data path
-    
+      Allimgs=" ";                              // holds all image URLs
+
 	$.each(giphResponse.data, function() {
        
-
-       imgUrl=this.images.original.url;
-      
-       imgUrlHtml=`<img src=${imgUrl} />`;
+       imgUrl=this.images.original.url;         // Current element URL
        
-       $("#imgCont").append(imgUrlHtml);    
+       imgUrlHtml=`<img src=${imgUrl} />`;      // format URL to <img src>
+
+       Allimgs=Allimgs+imgUrlHtml;
+    }); 
+       
+    $("#imgCont").html(Allimgs);    
         
-        
-    
-    });    
-    
     });
 	
-	
-
 	});  
+    
     });  
