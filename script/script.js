@@ -11,7 +11,7 @@ Project02 Giphy API
     var searchstring= "" ;
     var apikey="&api_key=4zv45wmD5vJvLn2UE3B4tNBY1ny9kZZV" ;
     var baseNum="&limit=";
-    var selectBoxNum="";
+    var searchNum="";
     var finalString="";
     
     $(document).ready(function() {
@@ -22,13 +22,13 @@ Project02 Giphy API
         searchstring=$("#searchbox").val() ; 
 
         // select box - number of searches
-        selectBoxNum=$("#selectBox").val() ;
+        searchNum=$("#selectBox").val() ;
         // console.log("SELECT BOX "+selectBoxNum);  
         
         
         
 
-    	finalString= basestring+searchstring+apikey+baseNum+selectBoxNum;
+    	finalString= basestring+searchstring+apikey+baseNum+searchNum;
          
         
     
@@ -40,21 +40,21 @@ Project02 Giphy API
 	//console.log(giphResponse.data);       // test to see API data
     
     // .each reads through each array element automatically 
-    // giphResponse.data is  Giphy Array called "data" 
+    // giphResponse.data is  Giphy JSON Array called "data" 
     // "this" reads giphResponse.data JSON
     //  this.images.original.url   -  Giphy JSON data path
       Allimgs=" ";                              // holds all image URLs
 
 	$.each(giphResponse.data, function() {
        
-       imgUrl=this.images.original.url;         // Current element URL
+       imgUrl=this.images.original.url;         // extract image URL from JSON
        
-       imgUrlHtml=`<img src=${imgUrl} />`;      // format URL to <img src>
+       imgUrlHtml=`<div class="imgGrid col-sm-6 col-lg-4" style="border:5px solid black;"> <img src=${imgUrl} class="img-fluid" /> </div>`;      // format URL to <div> <img src>  </div>
 
        Allimgs=Allimgs+imgUrlHtml;
     }); 
        
-    $("#imgCont").html(Allimgs);    
+    $("#imgContRow").html(Allimgs);   
         
     });
 	
