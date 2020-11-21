@@ -49,7 +49,7 @@ Project02 Giphy API
        
        imgUrl=this.images.original.url;         // extract image URL from JSON
        
-       imgUrlHtml=`<div class="imgGrid col-sm-6 col-lg-4" style="border:5px solid black;"> <img src=${imgUrl} class="img-fluid" /> </div>`;      // format URL to <div> <img src>  </div>
+       imgUrlHtml=`<div class="imgGrid col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3" style="border:5px solid black;"> <img src=${imgUrl} class="img-fluid" /> </div>`;      // format URL to <div> <img src>  </div>
 
        Allimgs=Allimgs+imgUrlHtml;
     }); 

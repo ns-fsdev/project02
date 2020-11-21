@@ -1,0 +1,30 @@
+/*
+Florida Atlantic University / Quickstart. 
+	Full stack web developer
+    Project02  Giphy API
+    BY NIGEL Sampath
+
+    "style.css"
+*/
+
+body {
+    color:white; 
+    background-color:black;
+    min-width:33%;
+}
+
+#Navtop {
+
+}
+
+.Logo {
+    background-color:black;
+}
+
+
+.Title {
+    font-family:Inder; 
+    font-size: 4em;
+    color: white; 
+    background-color:black;
+}

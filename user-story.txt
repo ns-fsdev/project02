@@ -1,0 +1,27 @@
+** USER STORIES ** 
+
+
+ Project 02: GIPHY API Image Search
+
+ FAU/Quickstart
+ Full-Stack Web Developer
+ By Nigel Sampath
+
+
+
+** USER Stories **
+
+
+USER 1  - Casual user: 
+Casual user just browsing the internet, 
+looking for fun content. 
+Needs a quick easy to use interface. 
+
+
+USER 2  - Content Developer:
+Web Developer can search 
+for images to use on their site.
+Quick easy interface helps searching.
+
+
+
