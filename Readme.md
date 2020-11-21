@@ -2,7 +2,7 @@
 ##  Project:
 ##  Project 02 - GIPHY API Search
    
-### FAU/Quickstart
+### Florida Atlantic University / Quickstart
 ### Full-Stack Web Developer
 ### By Nigel Sampath
 
@@ -10,10 +10,13 @@
 
 
 ### Content:
-   >** Code **
-   >index.html
-   >script.js    ./script
-   >style.css    ./style
+
+    > index.html
+    > script.js
+    > style.css
+
+    > images ./img
+    > wireframe ./wireframe
 
    
 ### User Stories:
@@ -45,9 +48,9 @@
 
 
 ### Ideas for Improvement 
-> add more content
-> work on styling for searchbox , select dropdown
+    > add more content
+    > work on styling for searchbox and select dropdown
 
 
 
-[ End ]
+[End]
